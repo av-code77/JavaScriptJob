@@ -1,0 +1,415 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  background-color: #f9fafb;
+  color: #374151;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.25;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  font-size: 0.9em;
+}
+
+.header {
+  border-bottom: 1px solid #374151;
+  background-color: #10120f;
+  padding: 16px;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  height: 90px;
+  margin: 0 auto;
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header__logo span {
+  font-size: 24px;
+}
+.header__logo1 {
+  color: #fff;
+}
+.header__logo2 {
+  color: #c0810e;
+}
+.header__btn {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  color: #1a1a1a;
+  font-family: "Arial", "Helvetica", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  gap: 6px;
+  background: linear-gradient(180deg, #ffcc33 0%, #f5a623 100%);
+  outline: 1px solid #f5d76e;
+  outline-offset: -2px;
+  box-shadow: inset 0px 0px 0px 1px #b8860b, 0px 4px 15px rgba(255, 170, 0, 0.4);
+}
+.header__btn::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 60%);
+  content: "";
+}
+.header__btn:active {
+  transform: translateY(1px);
+}
+
+.main {
+  min-height: 100vh;
+  background: radial-gradient(ellipse 50% 55% at 42% 20%, rgba(91, 57, 15, 0.55) 0%, rgba(55, 37, 16, 0.35) 35%, transparent 70%), #0e1012;
+}
+.main__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px;
+}
+.main__textBox {
+  margin-bottom: 24px;
+  text-align: center;
+}
+.main__title {
+  margin-bottom: 8px;
+  color: #fff;
+}
+.main__subtitle {
+  color: #8b8f98;
+}
+.main__displayCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+.main__cards {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  border: 1px solid #252b35;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  gap: 16px;
+}
+.main__cards:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 174, 0, 0.6);
+  box-shadow: 0 0 10px rgba(255, 174, 0, 0.35), 0 0 30px rgba(255, 174, 0, 0.15), 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+.main__cards::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  content: "";
+  background: linear-gradient(90deg, #ffad00 0%, #ffd000 35%, #00d9ff 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.main__cards:hover::after {
+  opacity: 1;
+}
+.main__img {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+}
+.main__badge {
+  border: 1px solid #c0810e;
+  border-radius: 8px;
+  background-color: #302b28;
+  color: #c0810e;
+  padding: 3px 6px;
+  font-size: 12px;
+}
+.main__cards-title {
+  color: #fff;
+  font-size: 16px;
+}
+.main__cards-priceBox {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.main__cards-price {
+  color: #00c8df;
+  font-size: 20px;
+  font-weight: 700;
+}
+.main__cards-priceTime {
+  color: #9ca3af;
+  font-size: 14px;
+}
+.main__btnBox {
+  display: flex;
+  gap: 8px;
+}
+.main__btnChange {
+  display: inline-block;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: #24262d;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.main__btnChange:hover {
+  background-color: rgb(24.6666666667, 26.037037037, 30.8333333333);
+}
+.main__btnChange:active {
+  background-color: rgb(13.3333333333, 14.0740740741, 16.6666666667);
+  transform: translateY(1px);
+}
+.main__btnDelete {
+  display: inline-block;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: #381b25;
+  color: #ef515a;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.main__btnDelete:hover {
+  background-color: rgb(38.7951807229, 18.7048192771, 25.6325301205);
+}
+.main__btnDelete:active {
+  background-color: rgb(21.5903614458, 10.4096385542, 14.265060241);
+  transform: translateY(1px);
+}
+
+.my-dialog {
+  padding: 24px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  text-align: justify;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: auto auto;
+  padding: 32px;
+  width: 100%;
+  max-width: 400px;
+  border: none;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  background-color: #13182b;
+  opacity: 0;
+  transform: scale(0.9) translateY(30px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), display 0.4s allow-discrete;
+}
+.my-dialog[open] {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+@starting-style {
+  .my-dialog[open] {
+    opacity: 0;
+    transform: scale(0.9) translateY(30px);
+  }
+}
+.my-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.4s ease, backdrop-filter 0.4s ease, display 0.4s allow-discrete;
+  backdrop-filter: blur(0px);
+}
+.my-dialog[open]::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+}
+@starting-style {
+  .my-dialog[open]::backdrop {
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+  }
+}
+.my-dialog__container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.my-dialog__title {
+  margin-bottom: 4px;
+  color: #fff;
+  font-size: 20px;
+}
+.my-dialog label {
+  display: flex;
+  color: #6b7280;
+  font-family: "Caveat";
+  font-size: 18px;
+}
+.my-dialog input, .my-dialog select {
+  width: 100%;
+  padding: 4px 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  transition: all 0.25s ease-in-out;
+  outline: none;
+}
+.my-dialog input::-moz-placeholder, .my-dialog select::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+}
+.my-dialog input::placeholder, .my-dialog select::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+}
+.my-dialog input:hover, .my-dialog select:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.my-dialog input:focus, .my-dialog select:focus {
+  border-color: #3b82f6;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+.my-dialog input:disabled, .my-dialog select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.01);
+}
+.my-dialog input, .my-dialog select {
+  margin-bottom: 16px;
+  height: 40px;
+  font-size: 16px;
+}
+.my-dialog select option {
+  background-color: #13182b;
+  color: #fff;
+}
+.my-dialog__btnBox {
+  display: flex;
+  gap: 8px;
+  justify-content: end;
+}
+.my-dialog__closeBtn {
+  display: inline-block;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: #24262d;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.my-dialog__closeBtn:hover {
+  background-color: rgb(24.6666666667, 26.037037037, 30.8333333333);
+}
+.my-dialog__closeBtn:active {
+  background-color: rgb(13.3333333333, 14.0740740741, 16.6666666667);
+  transform: translateY(1px);
+}
+.my-dialog__SaveBtn {
+  display: inline-block;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: #381b25;
+  color: #ef515a;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.my-dialog__SaveBtn:hover {
+  background-color: rgb(38.7951807229, 18.7048192771, 25.6325301205);
+}
+.my-dialog__SaveBtn:active {
+  background-color: rgb(21.5903614458, 10.4096385542, 14.265060241);
+  transform: translateY(1px);
+}

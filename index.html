@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <!-- Кодировка -->
+    <meta charset="UTF-8" />
+    <!-- Адаптивность для телефонов -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Отключение авто-ссылок на телефоны у цифр в iOS -->
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Заголовок страницы в браузере -->
+    <title></title>
+    <!-- Краткое описание для поисковиков (SEO) -->
+    <meta name="description" content="" />
+    <!-- Управление индексацией поисковыми роботами -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Превью для Telegram, VK и мессенджеров (Open Graph) -->
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+
+    <!-- Иконка сайта -->
+    <link rel="icon" type="image/png" href="./favicon.png" />
+
+    <!-- Предзагрузка и подключение шрифтов Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&family=JetBrains+Mono&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <div class="header__logo">
+          <svg
+            width="52"
+            height="52"
+            viewBox="0 0 52 52"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#FFB300" />
+                <stop offset="100%" stop-color="#FB8C00" />
+              </linearGradient>
+              <linearGradient id="boltGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFFFFF" />
+                <stop offset="100%" stop-color="#FFD54F" />
+              </linearGradient>
+            </defs>
+            <rect width="52" height="52" rx="14" fill="url(#bgGrad)" />
+            <path
+              d="M30 19 L21 27 L26 27 L22 38 L35 26 L29 26 Z"
+              fill="url(#boltGrad)"
+              stroke="#FFFFFF"
+              stroke-width="1.5"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span>
+            <span class="header__logo1">PRO</span>
+            <span class="header__logo2">MASTER</span>
+          </span>
+        </div>
+
+        <div><button class="header__btn">+ Добавить специалиста</button></div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="main__container">
+        <div class="main__textBox">
+          <h1 class="main__title">ЗАКАЗ РАЗНОРАБОЧИХ И МАСТЕРОВ</h1>
+          <p class="main__subtitle">
+            База проверенных специалистов для любых задач и проектов
+          </p>
+        </div>
+        <div class="main__displayCards" id="placeCards"></div>
+      </div>
+    </main>
+
+    <dialog class="my-dialog" id="AddModal">
+      <div class="my-dialog__container">
+        <h3 class="my-dialog__title">Введите свою информацию</h3>
+        <form action="">
+          <select id="selectJob">
+            <option value="">Все категории</option>
+            <option value="Сантехник">Сантехник</option>
+            <option value="Электрик">Электрик</option>
+            <option value="Грузчик / Логист">Грузчик / Логист</option>
+            <option value="Отделочник / Маляр">Отделочник / Маляр</option>
+          </select>
+          <label for="">Source for image</label>
+          <input type="text" placeholder="https:///" id="imgInput" />
+          <label for="">Enter name</label>
+          <input type="text" name="" id="nameInput" placeholder="Name the workers..." />
+          <label for="">Enter price</label>
+          <input type="number" id="priceInput" placeholder="Your money..." />
+        </form>
+
+        <div class="my-dialog__btnBox">
+          <button class="my-dialog__closeBtn">Close</button>
+          <button class="my-dialog__SaveBtn" id="AddJob">Save</button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="my-dialog" id="editModal">
+      <div class="my-dialog__container">
+        <h3 class="my-dialog__title">Введите свою информацию</h3>
+        <form action="">
+          <select id="editSelectJob">
+            <option value="">Все категории</option>
+            <option value="Сантехник">Сантехник</option>
+            <option value="Электрик">Электрик</option>
+            <option value="Грузчик / Логист">Грузчик / Логист</option>
+            <option value="Отделочник / Маляр">Отделочник / Маляр</option>
+          </select>
+          <label for="">Source for image</label>
+          <input type="text" placeholder="https:///" id="editImgInput" />
+          <label for="">Enter name</label>
+          <input type="text" name="" id="editNameInput" placeholder="Name the workers..." />
+          <label for="">Enter price</label>
+          <input type="number" id="editPriceInput" placeholder="Your money..." />
+        </form>
+
+        <div class="my-dialog__btnBox">
+          <button class="my-dialog__closeBtn" id="editCloseModal">Close</button>
+          <button class="my-dialog__SaveBtn" id="editAddJob">Save</button>
+        </div>
+      </div>
+    </dialog>
+    <!-- Подключение скриптов -->
+    <script src="example.js"></script>
+  </body>
+</html>
